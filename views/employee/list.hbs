@@ -1,0 +1,30 @@
+<h3 class="mb-3">
+    Employee List
+    <a class="btn btn-secondary" style="float: right;" href="/employee"><i class="fa fa-plus"></i> Create New</a> 
+</h3>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.city}}</td>
+                <td>
+                    <a href="/employee/{{this._id}}"><i class="fa fa-edit"></i></a>
+                    <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure about removing this employee record?')"><i class="text-danger fa fa-trash"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
